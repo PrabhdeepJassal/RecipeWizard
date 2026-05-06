@@ -1,0 +1,28 @@
+import React, { useLayoutEffect } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import LiquidsList from './LiquidsList';
+
+export default function Liquids({ navigation }) {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerTitle: () => (
+        <Text style={{ color: 'white', fontSize: 21, fontWeight: 'bold' }}>Liquids</Text>
+      ),
+      headerStyle: { backgroundColor: '#075e54' },
+      headerTintColor: 'white',
+    });
+  }, [navigation]);
+
+  return (
+    <View style={styles.container}>
+      <LiquidsList />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFF',
+  },
+});
